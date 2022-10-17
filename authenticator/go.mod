@@ -1,13 +1,10 @@
-module RefugeWallet
+module controllers
 
 go 1.19
 
-replace RefugeWallet/controllers => ./authenticator
-
-replace RefugeWallet/database => ./database
+replace RefugeWallet/database => ../database
 
 require (
-	RefugeWallet/controllers v0.0.0-00010101000000-000000000000
 	RefugeWallet/database v0.0.0-00010101000000-000000000000
 	github.com/gin-gonic/gin v1.8.1
 )
@@ -27,7 +24,7 @@ require (
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.1 // indirect
 	github.com/ugorji/go/codec v1.2.7 // indirect
-	golang.org/x/crypto v0.0.0-20221012134737-56aed061732a // indirect
+	golang.org/x/crypto v0.0.0-20211215153901-e495a2d5b3d3 // indirect
 	golang.org/x/net v0.0.0-20211112202133-69e39bad7dc2 // indirect
 	golang.org/x/sys v0.0.0-20210806184541-e5e7981a1069 // indirect
 	golang.org/x/text v0.3.7 // indirect
