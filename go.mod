@@ -6,13 +6,20 @@ replace RefugeWallet/controllers => ./authenticator
 
 replace RefugeWallet/database => ./database
 
+replace RefugeWallet/token => ./utils/token
+
+replace RefugeWallet/middleware => ./middleware
+
 require (
 	RefugeWallet/controllers v0.0.0-00010101000000-000000000000
 	RefugeWallet/database v0.0.0-00010101000000-000000000000
+	RefugeWallet/middleware v0.0.0-00010101000000-000000000000
 	github.com/gin-gonic/gin v1.8.1
 )
 
 require (
+	RefugeWallet/token v0.0.0-00010101000000-000000000000 // indirect
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.14.0 // indirect
 	github.com/go-playground/universal-translator v0.18.0 // indirect

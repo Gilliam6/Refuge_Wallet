@@ -5,6 +5,7 @@ import (
 
 	"RefugeWallet/controllers"
 	"RefugeWallet/database"
+	"RefugeWallet/middleware"
 
 	"github.com/gin-gonic/gin"
 )
@@ -29,7 +30,13 @@ func main() {
 
 	public := router.Group("/api")
 
-	public.POST("/login", controllers.Register)
+	public.POST("/registration", controllers.Register)
+	public.POST("/login", controllers.Login)
+
+	protected := router.Group("/api/wallet")
+	protected.Use(middleware.JwtAuth())
+	//	protected.GET("/", controllers.WalletStatus)
+	protected.GET("/user", controllers.CurrentUser)
 
 	fmt.Println("Started!")
 	router.Run("localhost:8080")

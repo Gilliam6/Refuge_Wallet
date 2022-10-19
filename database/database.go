@@ -34,5 +34,5 @@ func Connect() {
 	if pingErr != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("Connected!")
+	fmt.Printf("\n\n\033[1;34m%s\033[0m\n\n", "DB Connected!")
 }
